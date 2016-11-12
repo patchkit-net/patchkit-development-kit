@@ -4,3 +4,6 @@
 [submodule "src/libtorrent"]
 	path = src/libtorrent
 	url = https://github.com/arvidn/libtorrent.git
+[submodule "src/json"]
+	path = src/json
+	url = https://github.com/nlohmann/json.git
