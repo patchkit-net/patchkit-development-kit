@@ -7,3 +7,6 @@
 [submodule "src/json"]
 	path = src/json
 	url = https://github.com/nlohmann/json.git
+[submodule "src/qt5"]
+	path = src/qt5
+	url = https://code.qt.io/qt/qt5.git
