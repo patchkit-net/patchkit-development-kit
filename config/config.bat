@@ -1,2 +1,0 @@
-set PDK_CFG_CPP_COMPILER_CONFIGURE_SCRIPT_NAME=cpp_compiler_conf.bat
-set PDK_CFG_CMAKE_CONFIGURE_SCRIPT_NAME=cmake_conf.bat
