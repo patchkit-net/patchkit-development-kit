@@ -21,6 +21,11 @@ Every variable begins with prefix **PDK_**.
   * **PDK_BOOST_INCLUDEDIR** - directory with Boost headers
   * **PDK_BOOST_LIBRARYDIR_RELEASE** - directory with Boost release libraries
   * **PDK_BOOST_LIBRARYDIR_DEBUG** - directory with Boost debug libraries
+* libtorrent (prefix **PDK_LIBTORRENT_**)
+  * **PDK_LIBTORRENT_INCLUDEDIR_RELEASE** - directory with libtorrent release headers
+  * **PDK_LIBTORRENT_LIBRARYDIR_RELEASE** - directory with libtorrent release libraries
+  * **PDK_LIBTORRENT_INCLUDEDIR_DEBUG** - directory with libtorrent debug headers
+  * **PDK_LIBTORRENT_LIBRARYDIR_DEBUG** - directory with libtorrent debug libraries
 * Platform (prefix **PDK_PLATFORM_**)
   * **PDK_PLATFORM_NAME** - name of current platform
   * **PDK_PLATFORM_DIR** - path to current platform directory

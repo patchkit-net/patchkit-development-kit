@@ -61,6 +61,11 @@ if not exist %PDK_INSTALL_PLATFORM_DIR%\configure_boost.bat (
 :: Install JSON
 start /B /WAIT %~dp0src\install_json %1 || goto :error
 
+:: Install libtorrent (if not installed)
+if not exist %PDK_INSTALL_PLATFORM_DIR%\configure_libtorrent.bat (
+  start /B /WAIT %~dp0src\install_libtorrent %1 || goto :errror
+)
+
 :: Delete temp directory
 rmdir %PDK_INSTALL_TEMP_DIR% /s /q || goto :error
 

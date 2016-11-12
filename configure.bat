@@ -37,6 +37,7 @@ call %PDK_PLATFORM_DIR%/configure_cpp_compiler.bat || goto :configure_error
 call %PDK_PLATFORM_DIR%/configure_cmake.bat || goto :configure_error
 call %PDK_PLATFORM_DIR%/configure_boost.bat || goto :configure_error
 call %PDK_PLATFORM_DIR%/configure_json.bat || goto :configure_error
+call %PDK_PLATFORM_DIR%/configure_libtorrent.bat || goto :configure_error
 
 echo.
 echo Platform %1 configuration done!
