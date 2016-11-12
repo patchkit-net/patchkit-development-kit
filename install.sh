@@ -93,7 +93,7 @@ bash $INSTALL_SCRIPTDIR/src/install_json.sh $1 || error
 
 # Install libtorrent
 if [ ! -f $PDK_INSTALL_PLATFORM_DIR/configure_libtorrent.sh ]; then
-	sh $INSTALL_SCRIPTDIR/src/install_libtorrent.sh $1 || error
+	bash $INSTALL_SCRIPTDIR/src/install_libtorrent.sh $1 || error
 fi
 
 # Delete temp directory
