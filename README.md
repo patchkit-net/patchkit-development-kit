@@ -23,6 +23,14 @@ Every variable begins with prefix **PDK_**.
   * **PDK_BOOST_LIBRARYDIR_DEBUG** - directory with Boost debug libraries
 * Platform (prefix **PDK_PLATFORM_**)
   * **PDK_PLATFORM_NAME** - name of current platform
+  * **PDK_PLATFORM_DIR** - path to current platform directory
 * Variables used during installation (prefix **PDK_INSTALL_**)
   * **PDK_INSTALL_TEMP_DIR** - path to current installation temporary directory
   * **PDK_INSTALL_PLATFORM_DIR** - path to current installation platform directory
+
+## How to add new module
+
+1. Add source as Git submodule repository.
+2. Create **module install script** in `src` directory for both Windows and Unix shell. Name it `install_{module_name}`. It should build sources and create **module configure script** placed in install platform directory.
+3. Add call to **module install script** in **main install script**.
+4. Add call to **module configure script** in **main configure script**. 
