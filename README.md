@@ -11,6 +11,24 @@
   * Mac OSX (*64 bits*)- [Command Line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/)
 * [**CMake**](https://cmake.org/download/)
 
+## Installation
+
+### Windows
+1. Go to the root directory
+2. Run `install <platform> <path-to-msvc> <path-to-cmake> <cmake-generator>`
+
+### Unix
+1. Go to the root directory
+2. Run `./install <platform> <path-to-cmake> <cmake-generator>`
+
+## Configuration
+
+### Windows
+Run `configure <platform>`
+
+### Unix
+Run `source configure <platform>`
+
 ## Scripts Variables
 
 Every variable begins with prefix **PDK_**.
