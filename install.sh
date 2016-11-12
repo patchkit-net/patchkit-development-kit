@@ -91,8 +91,10 @@ fi
 # Install JSON
 bash $INSTALL_SCRIPTDIR/src/install_json.sh $1 || error
 
-# Configure CMake
-# eval "$($PDK_INSTALL_PLATFORM_DIR/configure_cmake.sh)"
+# Install libtorrent
+if [ ! -f $PDK_INSTALL_PLATFORM_DIR/configure_libtorrent.sh ]; then
+	sh $INSTALL_SCRIPTDIR/src/install_libtorrent.sh $1 || error
+fi
 
 # Delete temp directory
 rm -rf $PDK_INSTALL_TEMP_DIR || error
