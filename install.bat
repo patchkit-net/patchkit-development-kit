@@ -97,8 +97,9 @@ echo     %0 ^<platform^> ^<path-to-msvc^> ^<path-to-cmake^> ^<cmake-generator^>
 echo     %0 --help
 echo     %0 -h
 echo.
-echo Example:
-echo     %0 win32 "C:\Program Files\Microsoft Visual Studio 14.0" "C:\Program Files\CMake\bin" "Visual Studio 14 2015"
+echo Examples:
+echo     %0 win32 "C:\Program Files (x86)\Microsoft Visual Studio 14.0" "C:\Program Files\CMake\bin" "Visual Studio 2015 14"
+echo     %0 win64 "C:\Program Files (x86)\Microsoft Visual Studio 14.0" "C:\Program Files\CMake\bin" "Visual Studio 2015 14 x64"
 echo.
 echo Available platforms:
 echo     * win32
