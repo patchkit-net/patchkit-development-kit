@@ -1,10 +1,11 @@
+:: configure <platform>
 @echo off
 call %~dp0config/config.bat
 
 :: Validate arguments
 if [%1]==[] goto usage
 
-:: Check if help has been requested
+:: Display usage on -h or --help
 if %1==--help (
   goto usage
 )
@@ -13,50 +14,34 @@ if %1==-h (
   goto usage
 )
 
-:: Set argument variables
-set _PDK_ARG_PLATFORM=%1
-
 :: Check <platform>
-if not %_PDK_ARG_PLATFORM%==win32 if not %_PDK_ARG_PLATFORM%==win64 (
-  echo Error: unavailable ^<platform^> %_PDK_ARG_PLATFORM%
-  echo.
+if not %1==win32 if not %1==win64 (
+  echo Error: unavailable ^<platform^> %1
   goto usage
 )
 
-:: Set platform directory path
-set _PDK_PLATFORM_DIR_PATH=%~dp0%_PDK_ARG_PLATFORM%
+:: Set platform name
+set PDK_PLATFORM_NAME=%1
+
+:: Set platform directory
+set PDK_PLATFORM_DIR=%~dp0%PDK_PLATFORM_NAME%
 
 :: Check platform directory
-if not exist %_PDK_PLATFORM_DIR_PATH% (
-  echo Error: couldn't find platform directory %_PDK_PLATFORM_DIR_PATH%
-  goto :no_setup
-)
-
-:: Check configure scripts
-
-if not exist %_PDK_PLATFORM_DIR_PATH%/%PDK_CFG_CPP_COMPILER_CONFIGURE_SCRIPT_NAME% (
-  echo Error: couldn't find C++ compiler configure script %PDK_CFG_CPP_COMPILER_CONFIGURE_SCRIPT_NAME%
-  goto :no_setup
-)
-
-if not exist %_PDK_PLATFORM_DIR_PATH%/%PDK_CFG_CMAKE_CONFIGURE_SCRIPT_NAME% (
-  echo Error: couldn't find CMake configure script %PDK_CFG_CMAKE_CONFIGURE_SCRIPT_NAME%
-  goto :no_setup
+if not exist %PDK_PLATFORM_DIR% (
+  echo Error: couldn't find platform directory in %PDK_PLATFORM_DIR%
+  goto :no_installation
 )
 
 :: Call configure scripts
-call %_PDK_PLATFORM_DIR_PATH%/configure_cpp_compiler.bat
-call %_PDK_PLATFORM_DIR_PATH%/configure_cmake.bat
-call %_PDK_PLATFORM_DIR_PATH%/configure_boost.bat
-call %_PDK_PLATFORM_DIR_PATH%/configure_json.bat
-
-:: Set platform name
-set PDK_PLATFORM_NAME=%_PDK_ARG_PLATFORM%
+call %PDK_PLATFORM_DIR%/configure_cpp_compiler.bat || goto :configure_error
+call %PDK_PLATFORM_DIR%/configure_cmake.bat || goto :configure_error
+call %PDK_PLATFORM_DIR%/configure_boost.bat || goto :configure_error
+call %PDK_PLATFORM_DIR%/configure_json.bat || goto :configure_error
 
 echo.
-echo Platform %_PDK_ARG_PLATFORM% configuration done!
+echo Platform %1 configuration done!
 
-goto:eof
+exit /b
 
 :usage
 echo.
@@ -69,8 +54,20 @@ echo.
 echo Available platforms:
 echo     * win32
 echo     * win64
-goto:eof
 
-:no_setup
-echo Probably you haven't run setup_platform
-goto :eof
+exit /b
+
+:configure_error:
+set PDK_PLATFORM_DIR=
+set PDK_PLATFORM_NAME=
+echo Error: cannot configure the platform.
+echo Make sure that installation has been done correctly.
+
+exit /b 1
+
+:no_installation
+set PDK_PLATFORM_DIR=
+set PDK_PLATFORM_NAME=
+echo Please install platform with ./install
+
+exit /b 1
