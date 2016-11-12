@@ -41,7 +41,7 @@ call %PDK_PLATFORM_DIR%/configure_json.bat || goto :configure_error
 echo.
 echo Platform %1 configuration done!
 
-exit /b
+exit /b 0
 
 :usage
 echo.

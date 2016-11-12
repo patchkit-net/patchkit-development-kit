@@ -66,7 +66,7 @@ rmdir %PDK_INSTALL_TEMP_DIR% /s /q || goto :error
 
 echo Installation of platform %1 completed!
 
-exit /b
+exit /b 0
 
 :error
 echo Error: #%errorlevel%
@@ -88,4 +88,4 @@ echo Available platforms:
 echo     * win32
 echo     * win64
 
-exit /b
+exit /b 0
