@@ -5,8 +5,8 @@ echo Installing Boost...
 set _PDK_ARG_PLATFORM=%1
 
 :: Select address model basing on current platform
-if %1==win32 set _PDK_BOOST_ADDRESS_MODEL=32
-if %1==win64 set _PDK_BOOST_ADDRESS_MODEL=64
+if %_PDK_ARG_PLATFORM%==win32 set _PDK_BOOST_ADDRESS_MODEL=32
+if %_PDK_ARG_PLATFORM%==win64 set _PDK_BOOST_ADDRESS_MODEL=64
 
 :: Install Boost.Build
 pushd %~dp0\boost\tools\build\
