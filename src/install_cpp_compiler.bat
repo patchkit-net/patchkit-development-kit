@@ -5,6 +5,7 @@ echo Installing C++ compiler...
 set _PDK_ARG_PLATFORM=%1
 set _PDK_ARG_PATH_TO_MSVC=%2
 
+:: Select compiler environment basing on current platform
 if %_PDK_ARG_PLATFORM%==win32 set _PDK_CPP_COMPILER_ENV=x86
 if %_PDK_ARG_PLATFORM%==win64 set _PDK_CPP_COMPILER_ENV=x64
 
