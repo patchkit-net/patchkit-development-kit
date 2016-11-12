@@ -15,6 +15,12 @@ echo Installing Boost...
 if [ "$1" == "osx64" ]; then
   _PDK_BOOST_ADDRESS_MODEL=64
 fi
+if [ "$1" == "linux32" ]; then
+  _PDK_BOOST_ADDRESS_MODEL=32
+fi
+if [ "$1" == "linux64" ]; then
+  _PDK_BOOST_ADDRESS_MODEL=64
+fi
 
 pushd $SRC_INSTALL_BOOST_SCRIPT_DIR/boost/tools/build/
 

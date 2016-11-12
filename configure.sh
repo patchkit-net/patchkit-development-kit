@@ -13,8 +13,15 @@ function usage()
   echo \ \ \ \ source configure osx64
   echo
   echo Available platforms:
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo \ \ \ \ osx64
+  if [[ "$OSTYPE" == "darwin"* && "$(uname -m)" == "x86_64" ]]; then
+    echo \ \ \ \ \* osx64
+  fi
+  if [[ "$OSTYPE" == "linux"* ]]; then
+    if [[ "$(uname -m)" == "x86_64" ]]
+      echo \ \ \ \ \* linux64
+    else
+      echo \ \ \ \ \* linux32
+    fi
   fi
 }
 
@@ -47,7 +54,10 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
 fi
 
 # Check <platform>
-if [[ "$1" != "osx64" || "$OSTYPE" != "darwin"* ]]; then
+if [[ "$1" != "osx64" || "$OSTYPE" != "darwin"* ]] && \
+   [[ "$1" != "linux32" || "$OSTYPE" != "linux"* || "$(uname -m)" == "x86_64"]] && \
+   [[ "$1" != "linux64" || "$OSTYPE" != "linux"* || "$(uname -m)" != "x86_64"]] \
+   ; then
   echo Error: unavailable \<platform\> $1
   usage
   return 1
