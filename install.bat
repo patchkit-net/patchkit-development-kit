@@ -69,6 +69,9 @@ call %PDK_INSTALL_PLATFORM_DIR%\configure_cpp_compiler || goto :error
 :: Install Boost
 call %~dp0src\install_boost %_PDK_ARG_PLATFORM% || goto :error
 
+:: Install JSON
+call %~dp0src\install_json %_PDK_ARG_PLATFORM% || goto :error
+
 :: Delete installation temporary directory
 rmdir %PDK_INSTALL_TEMP_DIR% /s /q || goto :error
 
