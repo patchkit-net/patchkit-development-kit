@@ -19,7 +19,7 @@ function usage()
     echo \ \ \ \ \* osx64
   fi
   if [[ "$OSTYPE" == "linux"* ]]; then
-    if [[ "$(uname -m)" == "x86_64" ]]
+    if [[ "$(uname -m)" == "x86_64" ]]; then
   		echo \ \ \ \ \* linux64
   	else
   		echo \ \ \ \ \* linux32
@@ -46,10 +46,9 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
 fi
 
 # Check <platform>
-if [[ "$1" != "osx64" || "$OSTYPE" != "darwin"* ]] && \
-	 [[ "$1" != "linux32" || "$OSTYPE" != "linux"* || "$(uname -m)" == "x86_64"]] && \
-	 [[ "$1" != "linux64" || "$OSTYPE" != "linux"* || "$(uname -m)" != "x86_64"]] \
-	 ; then
+if [[ ( "$1" != "osx64" || "$OSTYPE" != "darwin"* ) \
+ && ( "$1" != "linux32" || "$OSTYPE" != "linux"* || "$(uname -m)" == "x86_64" ) \
+ && ( "$1" != "linux64" || "$OSTYPE" != "linux"* || "$(uname -m)" != "x86_64" ) ]]; then
 	echo Error: unavailable \<platform\> $1
 	usage
 	exit 1
@@ -79,18 +78,18 @@ if [ ! -d "$PDK_INSTALL_PLATFORM_DIR" ]; then
 fi
 
 # Install CMake
-sh $INSTALL_SCRIPTDIR/src/install_cmake.sh $1 $2 || error
+bash $INSTALL_SCRIPTDIR/src/install_cmake.sh $1 $2 || error
 
 # Install C++ compiler
 # Nothing to do
 
 # Install Boost
 if [ ! -f $PDK_INSTALL_PLATFORM_DIR/configure_boost.sh ]; then
-	sh $INSTALL_SCRIPTDIR/src/install_boost.sh $1 || error
+	bash $INSTALL_SCRIPTDIR/src/install_boost.sh $1 || error
 fi
 
 # Install JSON
-sh $INSTALL_SCRIPTDIR/src/install_json.sh $1 || error
+bash $INSTALL_SCRIPTDIR/src/install_json.sh $1 || error
 
 # Configure CMake
 # eval "$($PDK_INSTALL_PLATFORM_DIR/configure_cmake.sh)"
