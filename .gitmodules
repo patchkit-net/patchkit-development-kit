@@ -10,3 +10,6 @@
 [submodule "src/qt5"]
 	path = src/qt5
 	url = https://code.qt.io/qt/qt5.git
+[submodule "src/zlib"]
+	path = src/zlib
+	url = https://github.com/madler/zlib.git
