@@ -48,6 +48,7 @@ if not exist %_PDK_PLATFORM_DIR_PATH%/%PDK_CFG_CMAKE_CONFIGURE_SCRIPT_NAME% (
 call %_PDK_PLATFORM_DIR_PATH%/configure_cpp_compiler.bat
 call %_PDK_PLATFORM_DIR_PATH%/configure_cmake.bat
 call %_PDK_PLATFORM_DIR_PATH%/configure_boost.bat
+call %_PDK_PLATFORM_DIR_PATH%/configure_json.bat
 
 :: Set platform name
 set PDK_PLATFORM_NAME=%_PDK_ARG_PLATFORM%
