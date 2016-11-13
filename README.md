@@ -42,6 +42,8 @@ Every variable begins with prefix **PDK_**.
   * **PDK_LIBTORRENT_LIBRARYDIR_RELEASE** - directory with libtorrent release libraries
   * **PDK_LIBTORRENT_INCLUDEDIR_DEBUG** - directory with libtorrent debug headers
   * **PDK_LIBTORRENT_LIBRARYDIR_DEBUG** - directory with libtorrent debug libraries
+* Qt5 (prefix **PDK_QT5_**)
+  * **PDK_QT5_ROOT** - root directory of Qt5 installation
 * Platform (prefix **PDK_PLATFORM_**)
   * **PDK_PLATFORM_NAME** - name of current platform
   * **PDK_PLATFORM_DIR** - path to current platform directory
