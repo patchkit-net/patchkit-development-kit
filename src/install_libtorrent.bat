@@ -16,15 +16,16 @@ pushd %PDK_INSTALL_TEMP_DIR%\libtorrent_release
 
 :: Configure release
 call cmake ^
+  -DCMAKE_BUILD_TYPE=Release ^
   -DCMAKE_INSTALL_PREFIX=%PDK_INSTALL_PLATFORM_DIR%\libtorrent\release ^
   -Dencryption=off ^
   -DBOOST_INCLUDEDIR=%PDK_BOOST_INCLUDEDIR% ^
   -DBOOST_LIBRARYDIR=%PDK_BOOST_LIBRARYDIR_RELEASE% ^
-  -G %PDK_CMAKE_GENERATOR% ^
-  %~dp0libtorrent
+  -G "NMake Makefiles" ^
+  %~dp0libtorrent || goto :error
 
 :: Install release
-msbuild INSTALL.vcxproj /p:Configuration=Release /p:WarningLevel=0
+call nmake /C /ERRORREPORT:NONE /NOLOGO /S install || goto :error
 
 popd
 
@@ -35,15 +36,16 @@ pushd %PDK_INSTALL_TEMP_DIR%\libtorrent_debug
 
 :: Configure debug
 call cmake ^
+  -DCMAKE_BUILD_TYPE=Debug ^
   -DCMAKE_INSTALL_PREFIX=%PDK_INSTALL_PLATFORM_DIR%\libtorrent\debug ^
   -Dencryption=off ^
   -DBOOST_INCLUDEDIR=%PDK_BOOST_INCLUDEDIR% ^
   -DBOOST_LIBRARYDIR=%PDK_BOOST_LIBRARYDIR_DEBUG% ^
-  -G %PDK_CMAKE_GENERATOR% ^
-  %~dp0libtorrent
+  -G "NMake Makefiles" ^
+  %~dp0libtorrent || goto :error
 
 :: Install debug
-msbuild INSTALL.vcxproj /p:Configuration=Debug /p:WarningLevel=0
+call nmake /C /ERRORREPORT:NONE /NOLOGO /S install || goto :error
 
 popd
 

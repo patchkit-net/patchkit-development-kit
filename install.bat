@@ -1,4 +1,4 @@
-:: install <platform> <path-to-msvc> <path-to-cmake> <cmake-generator>
+:: install <platform> <path-to-msvc> <path-to-cmake>
 @echo off
 call %~dp0config\config.bat
 
@@ -6,7 +6,6 @@ call %~dp0config\config.bat
 if [%1]==[] goto usage
 if [%2]==[] goto usage
 if [%3]==[] goto usage
-if [%4]==[] goto usage
 
 :: Display usage on -h or --help
 if %1==--help (
@@ -48,7 +47,7 @@ mkdir %PDK_INSTALL_TEMP_DIR% || goto :error
 if not exist %PDK_INSTALL_PLATFORM_DIR% mkdir %PDK_INSTALL_PLATFORM_DIR% || goto :error
 
 :: Install CMake
-start /B /WAIT %~dp0src\install_cmake %1 %3 %4 || goto :error
+start /B /WAIT %~dp0src\install_cmake %1 %3 || goto :error
 
 :: Install C++ compiler
 start /B /WAIT %~dp0src\install_cpp_compiler %1 %2 || goto :error

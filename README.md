@@ -33,8 +33,6 @@ Run `source configure <platform>`
 
 Every variable begins with prefix **PDK_**.
 
-* CMake (prefix **PDK_CMAKE_**)
-  * **PDK_CMAKE_GENERATOR** - name of CMake generator
 * Boost (prefix **PDK_BOOST_**)
   * **PDK_BOOST_INCLUDEDIR** - directory with Boost headers
   * **PDK_BOOST_LIBRARYDIR_RELEASE** - directory with Boost release libraries

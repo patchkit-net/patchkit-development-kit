@@ -14,7 +14,6 @@ echo Installing CMake...
 # Save configure script
 _PDK_CMAKE_CONFIGURE_SCRIPT=$PDK_INSTALL_PLATFORM_DIR/configure_cmake.sh
 
-echo export PATH=\$PATH:$2 > $_PDK_CMAKE_CONFIGURE_SCRIPT || error
-echo export PDK_CMAKE_GENERATOR=\"Unix Makefiles\" >> $_PDK_CMAKE_CONFIGURE_SCRIPT || error
+echo export PATH=\$PATH:$2>$_PDK_CMAKE_CONFIGURE_SCRIPT||error
 
 echo Done!

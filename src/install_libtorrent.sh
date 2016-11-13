@@ -30,7 +30,7 @@ cmake \
   -Dencryption=off \
   -DBOOST_INCLUDEDIR=$PDK_BOOST_INCLUDEDIR \
   -DBOOST_LIBRARYDIR=$PDK_BOOST_LIBRARYDIR_RELEASE \
-  -G "$PDK_CMAKE_GENERATOR" \
+  -G "Unix Makefiles" \
   $SRC_INSTALL_LIBTORRENT_SCRIPT_DIR/libtorrent
 
 # Install release
@@ -53,7 +53,7 @@ cmake \
   -Dencryption=off \
   -DBOOST_INCLUDEDIR=$PDK_BOOST_INCLUDEDIR \
   -DBOOST_LIBRARYDIR=$PDK_BOOST_LIBRARYDIR_DEBUG \
-  -G "$PDK_CMAKE_GENERATOR" \
+  -G "Unix Makefiles" \
   $SRC_INSTALL_LIBTORRENT_SCRIPT_DIR/libtorrent
 
 # Install debug
