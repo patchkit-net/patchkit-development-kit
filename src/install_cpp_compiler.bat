@@ -11,8 +11,9 @@ if %1==win64 set _PDK_CPP_COMPILER_ENV=x64
 :: Save configure script
 set _PDK_CPP_COMPILER_CONFIGURE_SCRIPT=%PDK_INSTALL_PLATFORM_DIR%\configure_cpp_compiler.bat
 
-echo call %2\VC\vcvarsall.bat %_PDK_CPP_COMPILER_ENV% > %_PDK_CPP_COMPILER_CONFIGURE_SCRIPT% || goto :error
-echo exit /b 0 >> %_PDK_CPP_COMPILER_CONFIGURE_SCRIPT% || goto :error
+echo call %2\VC\vcvarsall.bat %_PDK_CPP_COMPILER_ENV%>%_PDK_CPP_COMPILER_CONFIGURE_SCRIPT%||goto :error
+echo set PATH=%%PATH%%;"%~dp0..\bin\win\jom">>%_PDK_CPP_COMPILER_CONFIGURE_SCRIPT%||goto :error
+echo exit /b ^0>>%_PDK_CPP_COMPILER_CONFIGURE_SCRIPT%||goto :error
 
 echo Done!
 
