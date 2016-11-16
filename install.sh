@@ -96,5 +96,10 @@ if [ ! -f $PDK_INSTALL_PLATFORM_DIR/configure_libtorrent.sh ]; then
 	bash $INSTALL_SCRIPTDIR/src/install_libtorrent.sh $1 || error
 fi
 
+# Install Qt5
+if [ ! -f $PDK_INSTALL_PLATFORM_DIR/configure_qt5.sh ]; then
+  bash $INSTALL_SCRIPTDIR/src/install_qt5.sh $1 || error
+fi
+
 # Delete temp directory
 rm -rf $PDK_INSTALL_TEMP_DIR || error

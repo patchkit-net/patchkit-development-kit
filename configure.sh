@@ -80,6 +80,7 @@ source $PDK_PLATFORM_DIR/configure_cmake.sh || ( configure_error && return 1 )
 source $PDK_PLATFORM_DIR/configure_boost.sh || ( configure_error && return 1 )
 source $PDK_PLATFORM_DIR/configure_json.sh || ( configure_error && return 1 )
 source $PDK_PLATFORM_DIR/configure_libtorrent.sh || ( configure_error && return 1 )
+source $PDK_PLATFORM_DIR/configure_qt5.sh || ( configure_error && return 1 )
 
 echo
 echo Platform $1 configuration done!
