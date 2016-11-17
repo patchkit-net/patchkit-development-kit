@@ -8,7 +8,7 @@
 
 * **C++ compiler**
   * Windows (*32/64 bits*) - [MSVC](https://www.visualstudio.com/downloads/) - recommended **VS 2015 / MSVC 14.0**
-  * Mac OSX (*64 bits*)- [Command Line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/)
+  * Mac OSX (*64 bits*)- XCode (you can download it with App Store)
 * [**CMake**](https://cmake.org/download/)
 
 ## Installation
