@@ -7,7 +7,7 @@
 ## Requirements
 
 * **C++ compiler**
-  * Windows (*32/64 bits*) - [MSVC](https://www.visualstudio.com/downloads/) - recommended **VS 2015 / MSVC 14.0**
+  * Windows (*32/64 bits*) - [MSVC](https://www.visualstudio.com/downloads/) - required **VS 2015 / MSVC 14.0**
   * Mac OSX (*64 bits*)- XCode (you can download it with App Store)
 * [**CMake**](https://cmake.org/download/)
 
@@ -15,19 +15,19 @@
 
 ### Windows
 1. Go to the root directory
-2. Run `install <platform> <path-to-msvc> <path-to-cmake> <cmake-generator>`
+2. Run `install <platform> <path-to-msvc> <path-to-cmake>`
 
 ### Unix
 1. Go to the root directory
-2. Run `./install <platform> <path-to-cmake> <cmake-generator>`
+2. Run `./install <platform> <path-to-cmake>`
 
-## Configuration
+## Configuration for software compilation
 
 ### Windows
 Run `configure <platform>`
 
 ### Unix
-Run `source configure <platform>`
+Run `source configure.sh <platform>`
 
 ## Scripts Variables
 
