@@ -7,7 +7,7 @@ function usage()
 {
 	echo
 	echo Usage:
-	echo  \ \ \ \ $0 \<platform\> \<path-to-cmake\> \<cmake-generator\>
+	echo  \ \ \ \ $0 \<platform\> \<path-to-cmake\>
 	echo
 	echo Examples:
 	echo  \ \ \ \ $0 osx64 /Applications/CMake.app/Contents/bin
