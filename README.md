@@ -13,13 +13,16 @@
 
 ## Installation
 
-### Windows
-1. Go to the root directory
-2. Run `install <platform> <path-to-msvc> <path-to-cmake>`
+### Common
 
-### Unix
 1. Go to the root directory
-2. Run `./install <platform> <path-to-cmake>`
+2. Execute `git submodule update --init --recursive` and go make yourself a tea
+
+### Windows
+1. Run `install <platform> <path-to-msvc> <path-to-cmake-directory>`
+
+### Unix/Linux
+1. Run `./install <platform> <path-to-cmake-directory>`
 
 ## Configuration for software compilation
 
