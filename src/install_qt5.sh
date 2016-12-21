@@ -30,6 +30,7 @@ pushd $SRC_INSTALL_QT5_SCRIPT_DIR/qt5
   -qt-pcre \
   -qt-xcb \
   -qt-xkbcommon-x11 \
+  -qpa xcb \
   -nomake examples \
   -nomake tests \
   -silent \
