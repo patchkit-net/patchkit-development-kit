@@ -7,27 +7,30 @@
 ## Requirements
 
 * **C++ compiler**
-  * Windows (*32/64 bits*) - [MSVC](https://www.visualstudio.com/downloads/) - recommended **VS 2015 / MSVC 14.0**
-  * Mac OSX (*64 bits*)- [Command Line Tools](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/)
+  * Windows (*32/64 bits*) - [MSVC](https://www.visualstudio.com/downloads/) - required **VS 2015 / MSVC 14.0**
+  * Mac OSX (*64 bits*)- XCode (you can download it with App Store)
 * [**CMake**](https://cmake.org/download/)
 
 ## Installation
 
+### Common
+
+1. Go to the root directory
+2. Execute `git submodule update --init --recursive` and go make yourself a tea
+
 ### Windows
-1. Go to the root directory
-2. Run `install <platform> <path-to-msvc> <path-to-cmake> <cmake-generator>`
+1. Run `install <platform> <path-to-msvc> <path-to-cmake-directory>`
 
-### Unix
-1. Go to the root directory
-2. Run `./install <platform> <path-to-cmake> <cmake-generator>`
+### Unix/Linux
+1. Run `./install <platform> <path-to-cmake-directory>`
 
-## Configuration
+## Configuration for software compilation
 
 ### Windows
 Run `configure <platform>`
 
 ### Unix
-Run `source configure <platform>`
+Run `source configure.sh <platform>`
 
 ## Scripts Variables
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # install_qt <platform>
 SRC_INSTALL_QT5_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source $SRC_INSTALL_QT5_SCRIPT_DIR/install_base.sh $1
+source $SRC_INSTALL_QT5_SCRIPT_DIR/install_base.sh
 
 function error()
 {
@@ -35,7 +35,7 @@ pushd $SRC_INSTALL_QT5_SCRIPT_DIR/qt5
   -nomake tests \
   -silent \
   -fontconfig \
-  -opengl
+  -opengl \
 
 # Build Qt5
 make
