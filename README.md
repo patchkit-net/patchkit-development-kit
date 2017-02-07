@@ -22,7 +22,7 @@
 1. Run `install <platform> <path-to-msvc> <path-to-cmake-directory>`
 
 ### Unix/Linux
-1. Run `./install <platform> <path-to-cmake-directory>`
+1. Run `./install.sh <platform> <path-to-cmake-directory>`
 
 ## Configuration for software compilation
 
