@@ -9,10 +9,12 @@ call %PDK_INSTALL_PLATFORM_DIR%\configure_cpp_compiler.bat
 
 set QMAKESPEC=win32-msvc2015
 
-pushd %~dp0qt5
+mkdir %PDK_INSTALL_TEMP_DIR%\qt5
+
+pushd %PDK_INSTALL_TEMP_DIR%\qt5
 
 :: Configure Qt
-call configure -prefix %PDK_INSTALL_PLATFORM_DIR%\qt5 -debug-and-release -confirm-license -opensource -static -static-runtime -nomake tests -nomake examples
+call %~dp0qt5\configure -prefix %PDK_INSTALL_PLATFORM_DIR%\qt5 -debug-and-release -confirm-license -opensource -static -static-runtime -nomake tests -nomake examples
 
 :: Build Qt
 call jom
