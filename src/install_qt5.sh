@@ -37,7 +37,6 @@ $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
   -silent \
   -fontconfig \
   -opengl \
-  -pkg-config \
 
 # Build Qt5
 make
