@@ -11,12 +11,15 @@
   * Mac OSX (*64 bits*)- XCode (you can download it with App Store)
 * [**CMake**](https://cmake.org/download/)
 
-## Installation
+## Downloading the repository
 
-### Common
+Execute in terminal:
+``` bash
+git clone https://github.com/patchkit-net/patchkit-development-kit.git && cd patchkit-development-kit/ && git submodule update --init --recursive
+```
+... and go make yourself a tea :-)
 
-1. Go to the root directory
-2. Execute `git submodule update --init --recursive` and go make yourself a tea
+## Installation platform
 
 ### Windows
 1. Run `install <platform> <path-to-msvc> <path-to-cmake-directory>`
@@ -60,3 +63,5 @@ Every variable begins with prefix **PDK_**.
 2. Create **module install script** in `src` directory for both Windows and Unix shell. Name it `install_{module_name}`. It should build sources and create **module configure script** placed in install platform directory.
 3. Add call to **module install script** in **main install script**.
 4. Add call to **module configure script** in **main configure script**. 
+
+**Warning** - all of modules added in this way will need to be converted to Ruby scripts after refactor that is scheduled for the future.
