@@ -24,8 +24,14 @@ git clone https://github.com/patchkit-net/patchkit-development-kit.git && cd pat
 ### Windows
 1. Run `install <platform> <path-to-msvc> <path-to-cmake-directory>`
 
+**\<platform\>** could be either *win32* or *win64*.
+
+**Note that you cannot use win64 on 32-bit system.**
+
 ### Unix/Linux
 1. Run `./install.sh <platform> <path-to-cmake-directory>`
+
+**\<platform\>** could be *linux32*, *linux64* or *osx64* depending on current platform.
 
 ## Configuration for software compilation
 
