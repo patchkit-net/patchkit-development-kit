@@ -42,9 +42,9 @@ $PDK_INSTALL_PLATFORM_DIR/boost/build/bin/b2 \
   --includedir=$PDK_INSTALL_PLATFORM_DIR/boost/include \
   --layout=system \
   address-model=$_PDK_BOOST_ADDRESS_MODEL \
-  link=shared \
+  link=static \
   threading=multi \
-  runtime-link=shared \
+  runtime-link=static \
   variant=release \
   install
 
@@ -55,9 +55,9 @@ $PDK_INSTALL_PLATFORM_DIR/boost/build/bin/b2 \
   --includedir=$PDK_INSTALL_PLATFORM_DIR/boost/include \
   --layout=system \
   address-model=$_PDK_BOOST_ADDRESS_MODEL \
-  link=shared \
+  link=static \
   threading=multi \
-  runtime-link=shared \
+  runtime-link=static \
   variant=debug \
   install
 
