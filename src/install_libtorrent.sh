@@ -28,6 +28,8 @@ cmake \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=$PDK_INSTALL_PLATFORM_DIR/libtorrent/release \
   -Dencryption=off \
+  -Dshared=off \
+  -Dstatic_runtime=on \
   -DBOOST_INCLUDEDIR=$PDK_BOOST_INCLUDEDIR \
   -DBOOST_LIBRARYDIR=$PDK_BOOST_LIBRARYDIR_RELEASE \
   -G "Unix Makefiles" \
@@ -51,6 +53,8 @@ cmake \
   -DCMAKE_BUILD_TYPE=Debug \
   -DCMAKE_INSTALL_PREFIX=$PDK_INSTALL_PLATFORM_DIR/libtorrent/debug \
   -Dencryption=off \
+  -Dshared=off \
+  -Dstatic_runtime=on \
   -DBOOST_INCLUDEDIR=$PDK_BOOST_INCLUDEDIR \
   -DBOOST_LIBRARYDIR=$PDK_BOOST_LIBRARYDIR_DEBUG \
   -G "Unix Makefiles" \
