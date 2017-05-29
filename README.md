@@ -29,7 +29,9 @@ git clone https://github.com/patchkit-net/patchkit-development-kit.git && cd pat
 **Note that you cannot use win64 on 32-bit system.**
 
 ### Unix/Linux
-1. Run `./install.sh <platform> <path-to-cmake-directory>`
+1. Make sure that CMake is installed. If not, install it by `sudo apt-get install cmake`.
+2. Search for CMake installation path. `which cmake` will show you the directory that needs to be used in next step. For example in my case it returned `/usr/bin/cmake` so I will use `/usr/bin/`.
+3. Run `./install.sh <platform> <path-to-cmake-directory>`
 
 **\<platform\>** could be *linux32*, *linux64* or *osx64* depending on current platform.
 
