@@ -16,27 +16,96 @@ mkdir $PDK_INSTALL_TEMP_DIR/qt5
 pushd $PDK_INSTALL_TEMP_DIR/qt5
 
 # Configure Qt
-$SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
-  -prefix $PDK_INSTALL_PLATFORM_DIR/qt5 \
-  -debug-and-release \
-  -opensource \
-  -confirm-license \
-  -static \
-  -largefile \
-  -qt-zlib \
-  -no-mtdev \
-  -qt-libpng \
-  -qt-libjpeg \
-  -qt-freetype \
-  -qt-harfbuzz \
-  -qt-pcre \
-  -qt-xkbcommon-x11 \
-  -no-xcb \
-  -nomake examples \
-  -nomake tests \
-  -silent \
-  -fontconfig \
-  -opengl \
+if [ "$1" == "osx64" ]; then
+  $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
+    -prefix $PDK_INSTALL_PLATFORM_DIR/qt5 \
+    -release \
+    -no-optimized-tools \
+    -opensource \
+    -confirm-license \
+    -c++std c++11 \
+    -static \
+    -largefile \
+    -accessibility \
+    -no-qml-debug \
+    -pkg-config \
+    -qt-zlib \
+    -qt-libpng \
+    -qt-libjpeg \
+    -qt-xcb \
+    -qt-xkbcommon \
+    -qt-pcre \
+    -qt-doubleconversion \
+    -qt-freetype \
+    -qt-harfbuzz \
+    -nomake examples \
+    -nomake tests \
+    -gui \
+    -widgets \
+    -silent \
+    -fontconfig \
+    -strip
+fi
+if [ "$1" == "linux32" ]; then
+  $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
+    -prefix $PDK_INSTALL_PLATFORM_DIR/qt5 \
+    -release \
+    -no-optimized-tools \
+    -opensource \
+    -confirm-license \
+    -c++std c++11 \
+    -static \
+    -largefile \
+    -accessibility \
+    -no-qml-debug \
+    -pkg-config \
+    -qt-zlib \
+    -qt-libpng \
+    -qt-libjpeg \
+    -qt-xcb \
+    -qt-xkbcommon \
+    -qt-pcre \
+    -qt-doubleconversion \
+    -qt-freetype \
+    -qt-harfbuzz \
+    -nomake examples \
+    -nomake tests \
+    -gui \
+    -widgets \
+    -silent \
+    -fontconfig \
+    -strip
+fi
+if [ "$1" == "linux64" ]; then
+  $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
+    -prefix $PDK_INSTALL_PLATFORM_DIR/qt5 \
+    -release \
+    -no-optimized-tools \
+    -opensource \
+    -confirm-license \
+    -c++std c++11 \
+    -static \
+    -largefile \
+    -accessibility \
+    -no-qml-debug \
+    -pkg-config \
+    -qt-zlib \
+    -qt-libpng \
+    -qt-libjpeg \
+    -qt-xcb \
+    -qt-xkbcommon \
+    -qt-pcre \
+    -qt-doubleconversion \
+    -qt-freetype \
+    -qt-harfbuzz \
+    -nomake examples \
+    -nomake tests \
+    -gui \
+    -widgets \
+    -silent \
+    -fontconfig \
+    -strip
+fi
 
 # Build Qt5
 make
