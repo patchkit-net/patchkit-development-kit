@@ -40,7 +40,7 @@ $PDK_INSTALL_PLATFORM_DIR/boost/build/bin/b2 \
   --build-dir=$PDK_INSTALL_TEMP_DIR/boost_release \
   --libdir=$PDK_INSTALL_PLATFORM_DIR/boost/lib \
   --includedir=$PDK_INSTALL_PLATFORM_DIR/boost/include \
-  --layout=system \
+  --layout=tagged \
   address-model=$_PDK_BOOST_ADDRESS_MODEL \
   link=static \
   threading=multi \
@@ -53,7 +53,7 @@ $PDK_INSTALL_PLATFORM_DIR/boost/build/bin/b2 \
   --build-dir=$PDK_INSTALL_TEMP_DIR/boost_debug \
   --libdir=$PDK_INSTALL_PLATFORM_DIR/boost/libd \
   --includedir=$PDK_INSTALL_PLATFORM_DIR/boost/include \
-  --layout=system \
+  --layout=tagged \
   address-model=$_PDK_BOOST_ADDRESS_MODEL \
   link=static \
   threading=multi \
