@@ -44,7 +44,8 @@ if [ "$1" == "osx64" ]; then
     -widgets \
     -silent \
     -fontconfig \
-    -strip
+    -strip \
+    -openssl-linked
 fi
 if [ "$1" == "linux32" ]; then
   $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
@@ -74,7 +75,8 @@ if [ "$1" == "linux32" ]; then
     -widgets \
     -silent \
     -fontconfig \
-    -strip
+    -strip \
+    -openssl-linked
 fi
 if [ "$1" == "linux64" ]; then
   $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
@@ -104,7 +106,8 @@ if [ "$1" == "linux64" ]; then
     -widgets \
     -silent \
     -fontconfig \
-    -strip
+    -strip \
+    -openssl-linked
 fi
 
 # Build Qt5

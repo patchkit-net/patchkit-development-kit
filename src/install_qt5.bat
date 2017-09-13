@@ -14,7 +14,7 @@ mkdir %PDK_INSTALL_TEMP_DIR%\qt5
 pushd %PDK_INSTALL_TEMP_DIR%\qt5
 
 :: Configure Qt
-call %~dp0qt5\configure -prefix %PDK_INSTALL_PLATFORM_DIR%\qt5 -debug-and-release -confirm-license -opensource -static -static-runtime -nomake tests -nomake examples
+call %~dp0qt5\configure -prefix %PDK_INSTALL_PLATFORM_DIR%\qt5 -debug-and-release -confirm-license -opensource -static -static-runtime -nomake tests -nomake examples -openssl-linked
 
 :: Build Qt
 call jom
