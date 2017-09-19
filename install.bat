@@ -49,6 +49,9 @@ if not exist %PDK_INSTALL_PLATFORM_DIR% mkdir %PDK_INSTALL_PLATFORM_DIR% || goto
 :: Install CMake
 start /B /WAIT %~dp0src\install_cmake %1 %3 || goto :error
 
+:: Install OpenSSL
+start /B /WAIT %~dp0src\install_openssl %1 || goto :error
+
 :: Install C++ compiler
 start /B /WAIT %~dp0src\install_cpp_compiler %1 %2 || goto :error
 
