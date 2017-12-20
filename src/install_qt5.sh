@@ -76,7 +76,8 @@ if [ "$1" == "linux32" ]; then
     -silent \
     -fontconfig \
     -strip \
-    -openssl-linked
+    -openssl-linked \
+    -no-icu
 fi
 if [ "$1" == "linux64" ]; then
   $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
@@ -107,7 +108,8 @@ if [ "$1" == "linux64" ]; then
     -silent \
     -fontconfig \
     -strip \
-    -openssl-linked
+    -openssl-linked \
+    -no-icu
 fi
 
 # Build Qt5
