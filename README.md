@@ -38,7 +38,7 @@ git clone https://github.com/patchkit-net/patchkit-development-kit.git && cd pat
 
 ### Mac OSX
 1. Install [Homebrew](https://brew.sh/).
-2. Install Packages `brew install pkg-config openssl`.
+2. Install Packages `brew install pkg-config`.
 3. Make sure that CMake is installed.
 4. Run `./install.sh osx64 <path-to-cmake-directory>`
 
