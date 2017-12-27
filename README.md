@@ -7,7 +7,7 @@
 ## Requirements
 
 * **C++ compiler**
-  * Windows (*32/64 bits*) - [MSVC](https://www.visualstudio.com/downloads/) - required **VS 2015 / MSVC 14.0**
+  * Windows (*32/64 bits*) - [MSVC 2015](https://www.visualstudio.com/vs/older-downloads/) - required **VS 2015 / MSVC 14.0** with **Windows SDK** (available during **Visual Studio** installation)
   * Mac OSX (*64 bits*)- XCode (you can download it with App Store)
 * [**CMake**](https://cmake.org/download/)
 
