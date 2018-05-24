@@ -30,6 +30,7 @@ git clone https://github.com/patchkit-net/patchkit-development-kit.git && cd pat
 
 ### Linux
 1. Install Packages `sudo apt-get install build-essential perl python libxi-dev libxfixes-dev libxext-dev libx11-dev "^libxcb.*" libxcb1-dev libx11-xcb-dev libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libglu1-mesa-dev libxrender-dev  libasound2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libfontconfig1-dev libfreetype6-dev libssl-dev openssl`
+  1. For fedora `@development-tools perl python libXi-devel libXfixes-devel libXext-devel libX11-devel libX11-xcb libxcb-devel mesa-libGL-devel libXrender-devel alsa-lib-devel gstreamer gstreamer-plugins-base-devel fontconfig-devel freetype-devel openssl-devel openssl openssl-lib-compat gcc-c++`
 2. Make sure that CMake is installed. If not, install it by `sudo apt-get install cmake`.
 3. Search for CMake installation path. `which cmake` will show you the directory that needs to be used in next step. For example in my case it returned `/usr/bin/cmake` so I will use `/usr/bin/`.
 4. Run `./install.sh <platform> <path-to-cmake-directory>`
