@@ -16,6 +16,8 @@ mkdir $PDK_INSTALL_TEMP_DIR/qt5
 pushd $PDK_INSTALL_TEMP_DIR/qt5
 
 # Configure Qt
+
+# On OSX we are using -no-xcb flag
 if [ "$1" == "osx64" ]; then
   $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
     -prefix $PDK_INSTALL_PLATFORM_DIR/qt5 \
@@ -32,7 +34,7 @@ if [ "$1" == "osx64" ]; then
     -qt-zlib \
     -qt-libpng \
     -qt-libjpeg \
-    -qt-xcb \
+    -no-xcb \
     -qt-xkbcommon \
     -qt-pcre \
     -qt-doubleconversion \
@@ -45,7 +47,8 @@ if [ "$1" == "osx64" ]; then
     -silent \
     -fontconfig \
     -strip \
-    -openssl-linked
+    -no-openssl \
+    -securetransport
 fi
 if [ "$1" == "linux32" ]; then
   $SRC_INSTALL_QT5_SCRIPT_DIR/qt5/configure \
@@ -111,7 +114,7 @@ if [ "$1" == "linux64" ]; then
 fi
 
 # Build Qt5
-make
+make -j5
 
 # Install Qt5
 make install
