@@ -9,14 +9,12 @@ call %PDK_INSTALL_PLATFORM_DIR%\configure_cpp_compiler.bat
 
 call %PDK_INSTALL_PLATFORM_DIR%\configure_openssl.bat
 
-set QMAKESPEC=win32-msvc2015
-
 mkdir %PDK_INSTALL_TEMP_DIR%\qt5
 
 pushd %PDK_INSTALL_TEMP_DIR%\qt5
 
 :: Configure Qt
-call %~dp0qt5\configure -prefix %PDK_INSTALL_PLATFORM_DIR%\qt5 -debug-and-release -confirm-license -opensource -static -static-runtime -nomake tests -nomake examples -openssl-linked -I %PDK_OPENSSL_INCLUDEDIR% -L %PDK_OPENSSL_LIBRARYDIR% OPENSSL_LIBS="-lssleay32MT -llibeay32MT"
+call %~dp0qt5\configure -prefix %PDK_INSTALL_PLATFORM_DIR%\qt5 -platform win32-msvc2015 -debug-and-release -confirm-license -opensource -static -static-runtime -nomake tests -nomake examples -openssl-linked -I %PDK_OPENSSL_INCLUDEDIR% -L %PDK_OPENSSL_LIBRARYDIR% OPENSSL_LIBS="-lssleay32MT -llibeay32MT"
 
 :: Build Qt
 call jom
