@@ -22,7 +22,28 @@ git clone https://github.com/patchkit-net/patchkit-development-kit.git && cd pat
 ## Installation platform
 
 ### Windows
-1. Run `install <platform> <path-to-msvc> <path-to-cmake-directory>`
+1. Fix Qt MSVC mkspec
+
+Modify `src/qt5/qtbase/mkspecs/common/msvc-version.conf` with following changes:
+```
+...
+
+#
+# Version-specific changes
+#
+
+QMAKE_MSC_VER = 1900
+QMAKE_MSC_FULL_VER = 190024215
+
+isEmpty(QMAKE_MSC_VER): error("msvc-version.conf loaded but QMAKE_MSC_VER isn't set")
+
+...
+```
+(you need to add the lines starting with `QMAKE_MSC_`)
+
+This modification is required due to the bug of qmake that fails to detect correct version of MSVC.
+
+2. Run `install <platform> <path-to-msvc> <path-to-cmake-directory>`
 
 **\<platform\>** could be either *win32* or *win64*.
 
